@@ -101,6 +101,11 @@ async function getByName(country) {
     }
     const data = await response.json();
     console.log(data);
+
+    const responseDiv = document.getElementById('country-name__response');
+    if (responseDiv) {
+      responseDiv.textContent = JSON.stringify(data, null, 2);
+    }
   } catch (error) {
     console.log(error.message);
   }
