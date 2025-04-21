@@ -1,8 +1,55 @@
-async function getAllApiResponse() {
-  const apiUrl = 'https://restcountries.com/v3.1/all';
+// the base url for the api
+const apiUrl = 'https://restcountries.com/v3.1';
 
+// countries to search by for visual examples
+const canada = {
+  name: 'Canada',
+  region: 'Americas',
+};
+
+// search the country by a common or official version of it's name
+// ex. /name/canada
+const nameApiUrl = apiUrl + '/name/';
+
+// search for the country by it's exact full name
+// ex. https://restcountries.com/v3.1/name/Canada?fullText=true
+const fullNameApiUrlEnding = '?fullText=true';
+
+// filter your search response output by the specific fields you want
+// ex.  https://restcountries.com/v3.1/name/Canada?fields=name,capital,currencies
+const filterFieldsApiUrlEnding = '?fields=';
+
+// search by country's currency
+// ex. /currency/cad
+const currencyApiUrl = apiUrl + '/currency/';
+
+// search by the country code or what entry it is in the list of all countries
+// ex. /alpha/170
+const countryCodeApiUrl = apiUrl + '/alpha/';
+
+// what a citizen of that country is called
+// ex. /demonym/canadian
+const demonymApiUrl = apiUrl + '/demonym/';
+
+// search by what language is spoken
+// ex. /lang/english
+const languageApiUrl = apiUrl + '/lang/';
+
+// search by the capital city of the country
+// ex. /capital/london
+const capitalApiUrl = apiUrl + '/capital/';
+
+// search by the region in which the countries are located
+// ex. /region/europe
+const regionApiUrl = apiUrl + '/region/';
+
+// search by the region in which the countries are located
+// ex. /region/Northern Europe
+const subRegionApiUrl = apiUrl + '/subregion/';
+
+async function getAllApiResponse() {
   try {
-    const allApiResponse = await fetch(apiUrl);
+    const allApiResponse = await fetch(apiUrl + '/all');
 
     if (!allApiResponse.ok) {
       throw new Error(`Response status: ${allApiResponse.status}`);
