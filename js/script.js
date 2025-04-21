@@ -186,6 +186,32 @@ async function getByCapital(country) {
   }
 }
 
+async function getByRegion(country) {
+  try {
+    const response = await fetch(regionApiUrl + country.region);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
+async function getBySubRegion(country) {
+  try {
+    const response = await fetch(subRegionApiUrl + country.subregion);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
 getAllApiResponse();
 getByName(canada);
 getByFullName(canada);
@@ -194,3 +220,5 @@ getByCountryCode(canada);
 getByDemonym(canada);
 getByLanguage(canada);
 getByCapital(canada);
+getByRegion(canada);
+getBySubRegion(canada);
