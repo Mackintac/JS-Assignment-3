@@ -121,4 +121,17 @@ async function getByFullName(country) {
   }
 }
 
+async function getByCurrency(country) {
+  try {
+    const response = await fetch(currencyApiUrl + country.currency);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
 getAllApiResponse();
