@@ -10,10 +10,35 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+
+  gap: 2rem;
+
+  margin: 4rem 0rem;
 }
 
 .response_area {
   white-space: pre;
   height: 200px;
   width: 400px;
+}
+
+#button-canada {
+  background-color: rgb(216, 31, 31);
+  color: white;
+  border-color: white;
+  border-radius: 10px;
+}
+
+#button-brazil {
+  background-color: green;
+  color: yellow;
+  border-color: yellow;
+  border-radius: 10px;
+}
+
+#button-egypt {
+  background-color: rgb(216, 31, 31);
+  color: yellow;
+  border-color: black;
+  border-radius: 10px;
 }
