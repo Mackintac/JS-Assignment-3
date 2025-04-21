@@ -3,8 +3,39 @@ const apiUrl = 'https://restcountries.com/v3.1';
 
 // countries to search by for visual examples
 const canada = {
-  name: 'Canada',
+  name: 'canada',
+  altName: 'Ca',
   region: 'Americas',
+  subregion: 'North America',
+  currency: 'cad',
+  code: '124',
+  demonyms: 'Canadian',
+  capital: 'Ottawa',
+  language: 'English',
+};
+
+const brazil = {
+  name: 'brazil',
+  altname: 'brasil',
+  region: 'americas',
+  subregion: 'south america',
+  currency: 'brl',
+  code: '076',
+  demonyms: 'brazilian',
+  capital: 'brasilia',
+  language: 'portuguese',
+};
+
+const egypt = {
+  name: 'egypt',
+  altname: 'Arab Republic of Egypt',
+  region: 'africa',
+  subregion: 'Northern Africa',
+  currency: 'egp',
+  code: '818',
+  demonyms: 'egyptian',
+  capital: 'Cairo',
+  language: 'portuguese',
 };
 
 // search the country by a common or official version of it's name
