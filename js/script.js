@@ -80,14 +80,27 @@ const subRegionApiUrl = apiUrl + '/subregion/';
 
 async function getAllApiResponse() {
   try {
-    const allApiResponse = await fetch(apiUrl + '/all');
+    const response = await fetch(apiUrl + '/all');
 
-    if (!allApiResponse.ok) {
-      throw new Error(`Response status: ${allApiResponse.status}`);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
     }
 
-    const resJson = await allApiResponse.json();
+    const resJson = await response.json();
     console.log(resJson);
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
+async function getByName(country) {
+  try {
+    const response = await fetch(nameApiUrl + country.name);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+    const data = await response.json();
+    console.log(data);
   } catch (error) {
     console.log(error.message);
   }
