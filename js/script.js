@@ -147,8 +147,36 @@ async function getByCountryCode(country) {
   }
 }
 
+async function getByDemonym(country) {
+  try {
+    const response = await fetch(demonymApiUrl + country.demonyms);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
+async function getByLanguage(country) {
+  try {
+    const response = await fetch(languageApiUrl + country.language);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
 getAllApiResponse();
 getByName(canada);
 getByFullName(canada);
 getByCurrency(canada);
 getByCountryCode(canada);
+getByDemonym(canada);
+getByLanguage(canada);
