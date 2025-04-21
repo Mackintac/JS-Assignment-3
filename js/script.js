@@ -4,7 +4,7 @@ const apiUrl = 'https://restcountries.com/v3.1';
 // countries to search by for visual examples
 const canada = {
   name: 'canada',
-  altName: 'Ca',
+  altName: 'canada',
   region: 'Americas',
   subregion: 'North America',
   currency: 'cad',
@@ -109,7 +109,7 @@ async function getByName(country) {
 async function getByFullName(country) {
   try {
     const response = await fetch(
-      nameApiUrl + country.name + fullNameApiUrlEnding
+      nameApiUrl + country.altName + fullNameApiUrlEnding
     );
     if (!response.ok) {
       throw new Error(`Response status: ${response.status}`);
@@ -135,3 +135,6 @@ async function getByCurrency(country) {
 }
 
 getAllApiResponse();
+getByName(canada);
+getByFullName(canada);
+getByCurrency(canada);
