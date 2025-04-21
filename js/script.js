@@ -212,6 +212,18 @@ async function getBySubRegion(country) {
   }
 }
 
+function onSubmit(country) {
+  getByName(country);
+  getByFullName(country);
+  getByCurrency(country);
+  getByCountryCode(country);
+  getByDemonym(country);
+  getByLanguage(country);
+  getByCapital(country);
+  getByRegion(country);
+  getBySubRegion(country);
+}
+
 getAllApiResponse();
 getByName(canada);
 getByFullName(canada);
