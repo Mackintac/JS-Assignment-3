@@ -121,6 +121,11 @@ async function getByFullName(country) {
     }
     const data = await response.json();
     console.log(data);
+
+    const responseDiv = document.getElementById('country-fullname__response');
+    if (responseDiv) {
+      responseDiv.textContent = JSON.stringify(data, null, 2);
+    }
   } catch (error) {
     console.log(error.message);
   }
@@ -134,6 +139,11 @@ async function getByCurrency(country) {
     }
     const data = await response.json();
     console.log(data);
+
+    const responseDiv = document.getElementById('country-currency__response');
+    if (responseDiv) {
+      responseDiv.textContent = JSON.stringify(data, null, 2);
+    }
   } catch (error) {
     console.log(error.message);
   }
@@ -147,6 +157,11 @@ async function getByCountryCode(country) {
     }
     const data = await response.json();
     console.log(data);
+
+    const responseDiv = document.getElementById('country-code__response');
+    if (responseDiv) {
+      responseDiv.textContent = JSON.stringify(data, null, 2);
+    }
   } catch (error) {
     console.log(error.message);
   }
@@ -160,6 +175,11 @@ async function getByDemonym(country) {
     }
     const data = await response.json();
     console.log(data);
+
+    const responseDiv = document.getElementById('country-demonym__response');
+    if (responseDiv) {
+      responseDiv.textContent = JSON.stringify(data, null, 2);
+    }
   } catch (error) {
     console.log(error.message);
   }
@@ -173,6 +193,11 @@ async function getByLanguage(country) {
     }
     const data = await response.json();
     console.log(data);
+
+    const responseDiv = document.getElementById('country-language__response');
+    if (responseDiv) {
+      responseDiv.textContent = JSON.stringify(data, null, 2);
+    }
   } catch (error) {
     console.log(error.message);
   }
@@ -186,6 +211,11 @@ async function getByCapital(country) {
     }
     const data = await response.json();
     console.log(data);
+
+    const responseDiv = document.getElementById('country-capital__response');
+    if (responseDiv) {
+      responseDiv.textContent = JSON.stringify(data, null, 2);
+    }
   } catch (error) {
     console.log(error.message);
   }
@@ -199,6 +229,11 @@ async function getByRegion(country) {
     }
     const data = await response.json();
     console.log(data);
+
+    const responseDiv = document.getElementById('country-region__response');
+    if (responseDiv) {
+      responseDiv.textContent = JSON.stringify(data, null, 2);
+    }
   } catch (error) {
     console.log(error.message);
   }
@@ -212,6 +247,11 @@ async function getBySubRegion(country) {
     }
     const data = await response.json();
     console.log(data);
+
+    const responseDiv = document.getElementById('country-subregion__response');
+    if (responseDiv) {
+      responseDiv.textContent = JSON.stringify(data, null, 2);
+    }
   } catch (error) {
     console.log(error.message);
   }

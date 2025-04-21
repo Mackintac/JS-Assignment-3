@@ -26,10 +26,19 @@ body {
   width: 400px;
 
   border-radius: 10px;
-
-  box-shadow: 1px 1px 1px black;
+  overflow: auto;
 }
+.response_area-wrapper {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #ccc;
 
+  background-color: #f9f9f9;
+
+  display: inline-block;
+
+  box-shadow: 2px 2px 2px black;
+}
 #button-canada {
   background-color: rgb(216, 31, 31);
   color: white;
@@ -48,15 +57,5 @@ body {
   background-color: rgb(216, 31, 31);
   color: yellow;
   border-color: black;
-  border-radius: 10px;
-}
-
-.response_area::-webkit-scrollbar-thumb {
-  background-color: #aaa;
-  border-radius: 10px;
-}
-
-.response_area::-webkit-scrollbar-track {
-  background-color: #f1f1f1;
   border-radius: 10px;
 }
