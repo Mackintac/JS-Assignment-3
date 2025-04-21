@@ -173,6 +173,19 @@ async function getByLanguage(country) {
   }
 }
 
+async function getByCapital(country) {
+  try {
+    const response = await fetch(capitalApiUrl + country.capital);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
 getAllApiResponse();
 getByName(canada);
 getByFullName(canada);
@@ -180,3 +193,4 @@ getByCurrency(canada);
 getByCountryCode(canada);
 getByDemonym(canada);
 getByLanguage(canada);
+getByCapital(canada);
