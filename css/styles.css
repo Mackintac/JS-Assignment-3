@@ -1,3 +1,5 @@
-#country-name__response {
+.response_area {
   white-space: pre;
+  height: 200px;
+  width: 400px;
 }
