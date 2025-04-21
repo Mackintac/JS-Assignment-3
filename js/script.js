@@ -106,4 +106,19 @@ async function getByName(country) {
   }
 }
 
+async function getByFullName(country) {
+  try {
+    const response = await fetch(
+      nameApiUrl + country.name + fullNameApiUrlEnding
+    );
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
 getAllApiResponse();
