@@ -4,7 +4,7 @@ const apiUrl = 'https://restcountries.com/v3.1';
 // countries to search by for visual examples
 const canada = {
   name: 'canada',
-  altName: 'canada',
+  altname: 'canada',
   region: 'Americas',
   subregion: 'North America',
   currency: 'cad',
@@ -15,8 +15,8 @@ const canada = {
 };
 
 const brazil = {
-  name: 'brazil',
-  altname: 'brasil',
+  name: 'brasil',
+  altname: 'brazil',
   region: 'americas',
   subregion: 'south america',
   currency: 'brl',
@@ -27,8 +27,8 @@ const brazil = {
 };
 
 const egypt = {
-  name: 'egypt',
-  altname: 'Arab Republic of Egypt',
+  name: 'Arab Republic of Egypt',
+  altname: 'egypt',
   region: 'africa',
   subregion: 'Northern Africa',
   currency: 'egp',
@@ -114,7 +114,7 @@ async function getByName(country) {
 async function getByFullName(country) {
   try {
     const response = await fetch(
-      nameApiUrl + country.altName + fullNameApiUrlEnding
+      nameApiUrl + country.altname + fullNameApiUrlEnding
     );
     if (!response.ok) {
       throw new Error(`Response status: ${response.status}`);
@@ -268,6 +268,18 @@ function onSubmit(country) {
   getByRegion(country);
   getBySubRegion(country);
 }
+
+document.getElementById('button-canada').addEventListener('click', () => {
+  onSubmit(canada);
+});
+
+document.getElementById('button-brazil').addEventListener('click', () => {
+  onSubmit(brazil);
+});
+
+document.getElementById('button-egypt').addEventListener('click', () => {
+  onSubmit(egypt);
+});
 
 getAllApiResponse();
 getByName(canada);
