@@ -78,32 +78,46 @@ const regionApiUrl = apiUrl + '/region/';
 // ex. /region/Northern Europe
 const subRegionApiUrl = apiUrl + '/subregion/';
 
+// get function to retrieve information about all countries
 async function getAllApiResponse() {
   try {
+    // setting url for use in fetch command
     const url = apiUrl + '/all';
+
+    // utilizing fetch() to perform a get request to the provided api
     const response = await fetch(url);
 
+    // if the response.ok value is falsey, provide us an Error with further information regarding
     if (!response.ok) {
       throw new Error(`Response status: ${response.status}`);
     }
 
+    // the raw JSON of the response
     const resJson = await response.json();
-    console.log(resJson);
 
+    // saves the reference of the element targetted with the id 'all-countries__response'
     const responseDiv = document.getElementById('all-countries__response');
+
+    // if the div exists, update it's text content with a formatted string version of the json body
     if (responseDiv) {
       responseDiv.textContent = JSON.stringify(resJson, null, 2);
     }
 
+    // saves the reference of the element targetted with the id 'all-countries_url'
     const responseUrl = document.getElementById('all-response_url');
+
+    // if the element exists, update the text content with the currently used api endpoint
     if (responseUrl) {
       responseUrl.textContent = url;
     }
+
+    // logs any caught error into the console
   } catch (error) {
     console.log(error.message);
   }
 }
 
+// get function to search for a country by its common or official name
 async function getByName(country) {
   try {
     const url = nameApiUrl + country.name;
@@ -112,7 +126,6 @@ async function getByName(country) {
       throw new Error(`Response status: ${response.status}`);
     }
     const data = await response.json();
-    console.log(data);
 
     const responseDiv = document.getElementById('country-name__response');
     if (responseDiv) {
@@ -128,6 +141,7 @@ async function getByName(country) {
   }
 }
 
+// get function to search for a country by its exact full name
 async function getByFullName(country) {
   try {
     const url = nameApiUrl + country.altname + fullNameApiUrlEnding;
@@ -136,7 +150,6 @@ async function getByFullName(country) {
       throw new Error(`Response status: ${response.status}`);
     }
     const data = await response.json();
-    console.log(data);
 
     const responseDiv = document.getElementById('country-fullname__response');
     if (responseDiv) {
@@ -152,6 +165,7 @@ async function getByFullName(country) {
   }
 }
 
+// get function to search for countries by their currency code
 async function getByCurrency(country) {
   try {
     const url = currencyApiUrl + country.currency;
@@ -160,7 +174,6 @@ async function getByCurrency(country) {
       throw new Error(`Response status: ${response.status}`);
     }
     const data = await response.json();
-    console.log(data);
 
     const responseDiv = document.getElementById('country-currency__response');
     if (responseDiv) {
@@ -176,6 +189,7 @@ async function getByCurrency(country) {
   }
 }
 
+// get function to search for a country by its country code
 async function getByCountryCode(country) {
   try {
     const url = countryCodeApiUrl + country.code;
@@ -184,7 +198,6 @@ async function getByCountryCode(country) {
       throw new Error(`Response status: ${response.status}`);
     }
     const data = await response.json();
-    console.log(data);
 
     const responseDiv = document.getElementById('country-code__response');
     if (responseDiv) {
@@ -200,6 +213,7 @@ async function getByCountryCode(country) {
   }
 }
 
+// get function to search for countries by their demonym
 async function getByDemonym(country) {
   try {
     const url = demonymApiUrl + country.demonyms;
@@ -208,7 +222,6 @@ async function getByDemonym(country) {
       throw new Error(`Response status: ${response.status}`);
     }
     const data = await response.json();
-    console.log(data);
 
     const responseDiv = document.getElementById('country-demonym__response');
     if (responseDiv) {
@@ -224,6 +237,7 @@ async function getByDemonym(country) {
   }
 }
 
+// get function to search for countries by it's spoken-language
 async function getByLanguage(country) {
   try {
     const url = languageApiUrl + country.language;
@@ -232,7 +246,6 @@ async function getByLanguage(country) {
       throw new Error(`Response status: ${response.status}`);
     }
     const data = await response.json();
-    console.log(data);
 
     const responseDiv = document.getElementById('country-language__response');
     if (responseDiv) {
@@ -248,6 +261,7 @@ async function getByLanguage(country) {
   }
 }
 
+// get function to grab any countries with the same capital city as the provided value
 async function getByCapital(country) {
   try {
     const url = capitalApiUrl + country.capital;
@@ -256,7 +270,6 @@ async function getByCapital(country) {
       throw new Error(`Response status: ${response.status}`);
     }
     const data = await response.json();
-    console.log(data);
 
     const responseDiv = document.getElementById('country-capital__response');
     if (responseDiv) {
@@ -272,6 +285,7 @@ async function getByCapital(country) {
   }
 }
 
+// get function to grab a list of the countries using the region value provided
 async function getByRegion(country) {
   try {
     const url = regionApiUrl + country.region;
@@ -280,7 +294,6 @@ async function getByRegion(country) {
       throw new Error(`Response status: ${response.status}`);
     }
     const data = await response.json();
-    console.log(data);
 
     const responseDiv = document.getElementById('country-region__response');
     if (responseDiv) {
@@ -296,6 +309,7 @@ async function getByRegion(country) {
   }
 }
 
+// get function to grab a list of the countries using the sub region value provided
 async function getBySubRegion(country) {
   try {
     const url = subRegionApiUrl + country.subregion;
@@ -304,7 +318,6 @@ async function getBySubRegion(country) {
       throw new Error(`Response status: ${response.status}`);
     }
     const data = await response.json();
-    console.log(data);
 
     const responseDiv = document.getElementById('country-subregion__response');
     if (responseDiv) {
@@ -319,6 +332,8 @@ async function getBySubRegion(country) {
     console.log(error.message);
   }
 }
+
+// additonal function to get the specific information of which countries border the target country
 async function getBorders(country) {
   try {
     const url = nameApiUrl + country.name;
@@ -329,7 +344,6 @@ async function getBorders(country) {
     }
 
     const data = await response.json();
-    console.log(data);
 
     const borders = data[0]?.borders || [];
     const bordersText =
@@ -376,6 +390,7 @@ document.getElementById('button-egypt').addEventListener('click', () => {
   onSubmit(egypt);
 });
 
+// initialization function to pre-populate examples
 function init() {
   getAllApiResponse();
   getByName(canada);
@@ -390,4 +405,5 @@ function init() {
   getBorders(canada);
 }
 
+// calling initialization function
 init();
