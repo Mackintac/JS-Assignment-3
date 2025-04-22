@@ -346,9 +346,9 @@ document.getElementById('button-egypt').addEventListener('click', () => {
   onSubmit(egypt);
 });
 
+getAllApiResponse();
 // Test code
 /*
-getAllApiResponse();
 getByName(canada);
 getByFullName(canada);
 getByCurrency(canada);
