@@ -346,16 +346,17 @@ document.getElementById('button-egypt').addEventListener('click', () => {
   onSubmit(egypt);
 });
 
-getAllApiResponse();
-// Test code
-/*
-getByName(canada);
-getByFullName(canada);
-getByCurrency(canada);
-getByCountryCode(canada);
-getByDemonym(canada);
-getByLanguage(canada);
-getByCapital(canada);
-getByRegion(canada);
-getBySubRegion(canada);
-*/
+function init() {
+  getAllApiResponse();
+  getByName(canada);
+  getByFullName(canada);
+  getByCurrency(canada);
+  getByCountryCode(canada);
+  getByDemonym(canada);
+  getByLanguage(canada);
+  getByCapital(canada);
+  getByRegion(canada);
+  getBySubRegion(canada);
+}
+
+init();
