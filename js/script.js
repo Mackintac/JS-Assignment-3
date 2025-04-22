@@ -95,7 +95,8 @@ async function getAllApiResponse() {
 
 async function getByName(country) {
   try {
-    const response = await fetch(nameApiUrl + country.name);
+    const url = nameApiUrl + country.name;
+    const response = await fetch(url);
     if (!response.ok) {
       throw new Error(`Response status: ${response.status}`);
     }
@@ -106,6 +107,11 @@ async function getByName(country) {
     if (responseDiv) {
       responseDiv.textContent = JSON.stringify(data, null, 2);
     }
+
+    const responseUrl = document.getElementById('name-response_url');
+    if (responseUrl) {
+      responseUrl.textContent = url;
+    }
   } catch (error) {
     console.log(error.message);
   }
@@ -113,9 +119,8 @@ async function getByName(country) {
 
 async function getByFullName(country) {
   try {
-    const response = await fetch(
-      nameApiUrl + country.altname + fullNameApiUrlEnding
-    );
+    const url = nameApiUrl + country.altname + fullNameApiUrlEnding;
+    const response = await fetch(url);
     if (!response.ok) {
       throw new Error(`Response status: ${response.status}`);
     }
@@ -126,6 +131,11 @@ async function getByFullName(country) {
     if (responseDiv) {
       responseDiv.textContent = JSON.stringify(data, null, 2);
     }
+
+    const responseUrl = document.getElementById('fullname-response_url');
+    if (responseUrl) {
+      responseUrl.textContent = url;
+    }
   } catch (error) {
     console.log(error.message);
   }
@@ -133,7 +143,8 @@ async function getByFullName(country) {
 
 async function getByCurrency(country) {
   try {
-    const response = await fetch(currencyApiUrl + country.currency);
+    const url = currencyApiUrl + country.currency;
+    const response = await fetch(url);
     if (!response.ok) {
       throw new Error(`Response status: ${response.status}`);
     }
@@ -144,6 +155,11 @@ async function getByCurrency(country) {
     if (responseDiv) {
       responseDiv.textContent = JSON.stringify(data, null, 2);
     }
+
+    const responseUrl = document.getElementById('currency-response_url');
+    if (responseUrl) {
+      responseUrl.textContent = url;
+    }
   } catch (error) {
     console.log(error.message);
   }
@@ -151,7 +167,8 @@ async function getByCurrency(country) {
 
 async function getByCountryCode(country) {
   try {
-    const response = await fetch(countryCodeApiUrl + country.code);
+    const url = countryCodeApiUrl + country.code;
+    const response = await fetch(url);
     if (!response.ok) {
       throw new Error(`Response status: ${response.status}`);
     }
@@ -162,6 +179,11 @@ async function getByCountryCode(country) {
     if (responseDiv) {
       responseDiv.textContent = JSON.stringify(data, null, 2);
     }
+
+    const responseUrl = document.getElementById('code-response_url');
+    if (responseUrl) {
+      responseUrl.textContent = url;
+    }
   } catch (error) {
     console.log(error.message);
   }
@@ -169,7 +191,8 @@ async function getByCountryCode(country) {
 
 async function getByDemonym(country) {
   try {
-    const response = await fetch(demonymApiUrl + country.demonyms);
+    const url = demonymApiUrl + country.demonyms;
+    const response = await fetch(url);
     if (!response.ok) {
       throw new Error(`Response status: ${response.status}`);
     }
@@ -180,6 +203,11 @@ async function getByDemonym(country) {
     if (responseDiv) {
       responseDiv.textContent = JSON.stringify(data, null, 2);
     }
+
+    const responseUrl = document.getElementById('demonym-response_url');
+    if (responseUrl) {
+      responseUrl.textContent = url;
+    }
   } catch (error) {
     console.log(error.message);
   }
@@ -187,7 +215,8 @@ async function getByDemonym(country) {
 
 async function getByLanguage(country) {
   try {
-    const response = await fetch(languageApiUrl + country.language);
+    const url = languageApiUrl + country.language;
+    const response = await fetch(url);
     if (!response.ok) {
       throw new Error(`Response status: ${response.status}`);
     }
@@ -198,6 +227,11 @@ async function getByLanguage(country) {
     if (responseDiv) {
       responseDiv.textContent = JSON.stringify(data, null, 2);
     }
+
+    const responseUrl = document.getElementById('language-response_url');
+    if (responseUrl) {
+      responseUrl.textContent = url;
+    }
   } catch (error) {
     console.log(error.message);
   }
@@ -205,7 +239,8 @@ async function getByLanguage(country) {
 
 async function getByCapital(country) {
   try {
-    const response = await fetch(capitalApiUrl + country.capital);
+    const url = capitalApiUrl + country.capital;
+    const response = await fetch(url);
     if (!response.ok) {
       throw new Error(`Response status: ${response.status}`);
     }
@@ -216,6 +251,11 @@ async function getByCapital(country) {
     if (responseDiv) {
       responseDiv.textContent = JSON.stringify(data, null, 2);
     }
+
+    const responseUrl = document.getElementById('capital-response_url');
+    if (responseUrl) {
+      responseUrl.textContent = url;
+    }
   } catch (error) {
     console.log(error.message);
   }
@@ -223,7 +263,8 @@ async function getByCapital(country) {
 
 async function getByRegion(country) {
   try {
-    const response = await fetch(regionApiUrl + country.region);
+    const url = regionApiUrl + country.region;
+    const response = await fetch(url);
     if (!response.ok) {
       throw new Error(`Response status: ${response.status}`);
     }
@@ -234,6 +275,11 @@ async function getByRegion(country) {
     if (responseDiv) {
       responseDiv.textContent = JSON.stringify(data, null, 2);
     }
+
+    const responseUrl = document.getElementById('region-response_url');
+    if (responseUrl) {
+      responseUrl.textContent = url;
+    }
   } catch (error) {
     console.log(error.message);
   }
@@ -241,7 +287,8 @@ async function getByRegion(country) {
 
 async function getBySubRegion(country) {
   try {
-    const response = await fetch(subRegionApiUrl + country.subregion);
+    const url = subRegionApiUrl + country.subregion;
+    const response = await fetch(url);
     if (!response.ok) {
       throw new Error(`Response status: ${response.status}`);
     }
@@ -251,6 +298,11 @@ async function getBySubRegion(country) {
     const responseDiv = document.getElementById('country-subregion__response');
     if (responseDiv) {
       responseDiv.textContent = JSON.stringify(data, null, 2);
+    }
+
+    const responseUrl = document.getElementById('subregion-response_url');
+    if (responseUrl) {
+      responseUrl.textContent = url;
     }
   } catch (error) {
     console.log(error.message);
