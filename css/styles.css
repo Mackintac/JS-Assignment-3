@@ -7,10 +7,17 @@ body {
   align-items: center;
   justify-content: center;
 
-  background-color: rgb(32, 151, 160);
-  box-shadow: 1px 1px 1px black, -1px 1px 1px black;
   width: 80%;
+
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+  background-color: rgb(98, 218, 226);
+
+  box-shadow: 1px 1px 1px black, -1px 1px 1px black;
+
   margin: 0rem auto;
+  gap: 1rem;
 }
 
 .button_container {
@@ -22,6 +29,10 @@ body {
   gap: 2rem;
 
   margin: 4rem 0rem;
+}
+
+.response_item {
+  width: 600px;
 }
 
 .response_area {
@@ -48,6 +59,8 @@ body {
   color: white;
   border-color: white;
   border-radius: 10px;
+  height: 40px;
+  width: 100px;
 }
 
 #button-brazil {
@@ -55,6 +68,8 @@ body {
   color: yellow;
   border-color: yellow;
   border-radius: 10px;
+  height: 40px;
+  width: 100px;
 }
 
 #button-egypt {
@@ -62,4 +77,6 @@ body {
   color: yellow;
   border-color: black;
   border-radius: 10px;
+  height: 40px;
+  width: 100px;
 }
