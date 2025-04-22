@@ -319,6 +319,35 @@ async function getBySubRegion(country) {
     console.log(error.message);
   }
 }
+async function getBorders(country) {
+  try {
+    const url = nameApiUrl + country.name;
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    console.log(data);
+
+    const borders = data[0]?.borders || [];
+    const bordersText =
+      borders.length > 0 ? borders.join(', ') : 'No borders available';
+
+    const responseDiv = document.getElementById('country-borders__response');
+    if (responseDiv) {
+      responseDiv.textContent = bordersText;
+    }
+
+    const responseUrl = document.getElementById('borders-response_url');
+    if (responseUrl) {
+      responseUrl.textContent = url;
+    }
+  } catch (error) {
+    console.log(error.message);
+  }
+}
 
 // function to update all of the queries with the respective country object provided as an arguement
 function onSubmit(country) {
@@ -331,6 +360,7 @@ function onSubmit(country) {
   getByCapital(country);
   getByRegion(country);
   getBySubRegion(country);
+  getBorders(country);
 }
 
 // event listeners added to each of the buttons to call the onSubmit function for their respective country
@@ -357,6 +387,7 @@ function init() {
   getByCapital(canada);
   getByRegion(canada);
   getBySubRegion(canada);
+  getBorders(canada);
 }
 
 init();
