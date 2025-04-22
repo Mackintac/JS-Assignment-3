@@ -17,6 +17,7 @@ body {
   box-shadow: 1px 1px 1px black, -1px 1px 1px black;
 
   margin: 0rem auto;
+  padding: 0rem 2rem;
   gap: 1rem;
 }
 
@@ -28,15 +29,20 @@ body {
 
   gap: 2rem;
 
-  margin: 4rem 0rem;
+  margin: 2rem 0rem;
 }
 
 .response_item {
   width: 600px;
+  align-items: center;
+  justify-content: center;
+
+  border-bottom: 1px solid black;
 }
 
 .response_area {
   white-space: pre;
+
   height: 200px;
   width: 400px;
 
