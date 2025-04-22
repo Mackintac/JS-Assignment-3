@@ -320,6 +320,7 @@ async function getBySubRegion(country) {
   }
 }
 
+// function to update all of the queries with the respective country object provided as an arguement
 function onSubmit(country) {
   getByName(country);
   getByFullName(country);
@@ -332,6 +333,7 @@ function onSubmit(country) {
   getBySubRegion(country);
 }
 
+// event listeners added to each of the buttons to call the onSubmit function for their respective country
 document.getElementById('button-canada').addEventListener('click', () => {
   onSubmit(canada);
 });
@@ -344,6 +346,8 @@ document.getElementById('button-egypt').addEventListener('click', () => {
   onSubmit(egypt);
 });
 
+// Test code
+/*
 getAllApiResponse();
 getByName(canada);
 getByFullName(canada);
@@ -354,3 +358,4 @@ getByLanguage(canada);
 getByCapital(canada);
 getByRegion(canada);
 getBySubRegion(canada);
+*/
